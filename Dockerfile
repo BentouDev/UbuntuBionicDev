@@ -2,7 +2,7 @@ FROM library/ubuntu:bionic
 MAINTAINER Jakub Bentkowski <bentkowski.jakub@gmail.com>
 
 RUN apt-get update \
-    && apt-get install -y \
+    && apt-get install -y --no-install-recommends \
     xorg-dev \
     libxxf86vm-dev \
     libglu1-mesa-dev \
@@ -28,7 +28,8 @@ RUN apt-get update \
     qml-module-qtquick-layouts \
     python3-pip \
     python3-dev \
-    build-essential
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN echo -e '#!/bin/bash\npip3 "$@"' > /usr/bin/pip && \
     chmod +x /usr/bin/pip
