@@ -34,5 +34,6 @@ RUN apt-get update \
 RUN echo -e '#!/bin/bash\npip3 "$@"' > /usr/bin/pip && \
     chmod +x /usr/bin/pip
 
+RUN ls /usr/bin | grep pip
 RUN pip install conan --upgrade
 RUN pip install conan_package_tools --upgrade
