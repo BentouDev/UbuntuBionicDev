@@ -38,3 +38,6 @@ RUN ls /usr/bin | grep pip
 RUN pip install setuptools --upgrade
 RUN pip install conan --upgrade
 RUN pip install conan_package_tools --upgrade
+
+RUN wget https://cmake.org/files/v3.14/cmake-3.14.3-Linux-x86_64.sh
+RUN sudo sh cmake-3.14.3-Linux-x86_64.sh --prefix=/usr/local --exclude-subdir
