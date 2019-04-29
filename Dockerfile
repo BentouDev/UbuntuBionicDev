@@ -3,6 +3,7 @@ MAINTAINER Jakub Bentkowski <bentkowski.jakub@gmail.com>
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
+    wget \
     xorg-dev \
     libxxf86vm-dev \
     libglu1-mesa-dev \
